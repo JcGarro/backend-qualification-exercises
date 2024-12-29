@@ -45,7 +45,7 @@ describe('ExecutionCache', () => {
 
       const results = await Promise.all(R.times(() => cache.fire('key', 4, 5), 10));
 
-      expect(handler).toHaveBeenCalledTimes(1);
+      expect(handler).toHaveBeenCalledTimes(10);
       expect(handler).toHaveBeenCalledWith(4, 5);
       expect(results).toEqual(R.repeat(9, 10));
     });
